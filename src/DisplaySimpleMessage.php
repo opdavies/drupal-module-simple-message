@@ -1,7 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Drupal\simple_message;
 
+use Drupal\Core\Config\Config;
 use Drupal\Core\Routing\AdminContext;
 use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
@@ -14,9 +17,9 @@ final class DisplaySimpleMessage implements EventSubscriberInterface {
 
   use StringTranslationTrait;
 
-  private $messenger;
-  private $adminContext;
-  private $config;
+  private MessengerInterface $messenger;
+  private AdminContext $adminContext;
+  private Config $config;
 
   public function __construct(
     MessengerInterface $messenger,
@@ -28,7 +31,7 @@ final class DisplaySimpleMessage implements EventSubscriberInterface {
     $this->config = $configFactory->get('simple_message.config');
   }
 
-  public function displayMessage(GetResponseEvent $event) {
+  public function displayMessage(GetResponseEvent $event): void {
     if ($this->adminContext->isAdminRoute()) {
       return;
     }

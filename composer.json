@@ -1,5 +1,8 @@
 {
 	"name": "drupal/simple_message",
 	"description": "Displays a simple message.",
-	"type": "drupal-module"
+	"type": "drupal-module",
+	"require": {
+		"php": "^7.4"
+	}
 }
