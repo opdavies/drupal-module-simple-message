@@ -1,0 +1,5 @@
+{
+	"name": "drupal/simple_message",
+	"description": "Displays a simple message.",
+	"type": "drupal-module"
+}
