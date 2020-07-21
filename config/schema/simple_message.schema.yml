@@ -1,0 +1,6 @@
+simple_message.config:
+  type: config_object
+  label: Simple Message
+  mapping:
+    message:
+      type: text
